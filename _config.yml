@@ -1,0 +1,30 @@
+title: Blenda Core
+description: Blender専門の3DCG制作スタジオ Blenda Core のブログ。Blender・Unreal Engine・Mayaなど3DCG制作の技術情報と、企業の3DCG活用のヒントを発信しています。
+url: "https://blendacore.com"
+lang: ja_JP
+locale: ja_JP
+timezone: Asia/Tokyo
+author: 星野 昇平
+
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - scripts/
+  - README-blog.md
+  - Gemfile
+  - Gemfile.lock

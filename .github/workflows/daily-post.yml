@@ -1,0 +1,70 @@
+name: Daily blog post
+
+on:
+  schedule:
+    # 毎日 7:17（日本時間）に実行。GitHubの混雑を避けるため00分からずらしています
+    - cron: "17 22 * * *"
+  # Actionsタブの「Run workflow」ボタンから手動実行もできます
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daily-blog-post
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # レビュー待ちの下書きブランチ（blog/*）も読んでテーマの重複を防ぐ
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate today's post
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLOG_MODEL: ${{ vars.BLOG_MODEL }}
+        run: python scripts/generate_post.py
+
+      # ── 完全自動モード（リポジトリ変数 AUTO_PUBLISH を true にしたとき）──
+      - name: Publish directly
+        if: steps.gen.outputs.post_path != '' && vars.AUTO_PUBLISH == 'true'
+        env:
+          POST_PATH: ${{ steps.gen.outputs.post_path }}
+          POST_TITLE: ${{ steps.gen.outputs.title }}
+        run: |
+          git config user.name "blenda-core-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$POST_PATH"
+          git commit -m "ブログ記事: $POST_TITLE"
+          git push
+
+      # ── レビューモード（初期設定）：プルリクエストを作成し、マージしたら公開 ──
+      - name: Open pull request for review
+        if: steps.gen.outputs.post_path != '' && vars.AUTO_PUBLISH != 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: blog/${{ steps.gen.outputs.date }}
+          delete-branch: true
+          add-paths: ${{ steps.gen.outputs.post_path }}
+          commit-message: "ブログ下書き: ${{ steps.gen.outputs.title }}"
+          title: "ブログ下書き（${{ steps.gen.outputs.date }}）: ${{ steps.gen.outputs.title }}"
+          body: |
+            今日のブログ記事の下書きです。
+
+            - ファイル: `${{ steps.gen.outputs.post_path }}`
+            - 「Files changed」タブで本文を確認できます。気になる箇所は鉛筆アイコンから直接修正できます。
+            - 問題なければ **Merge pull request** を押すと、数分後に https://blendacore.com/blog/ に公開されます。
+            - 公開しない場合は **Close pull request** で閉じてください。
+          labels: blog

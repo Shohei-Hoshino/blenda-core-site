@@ -1,0 +1,217 @@
+# 毎日の記事テーマ候補。上から順に、まだ使っていないものが1つずつ記事になります。
+# 追加・並べ替え・削除は自由です（id は重複しないようにしてください）。
+# すべて使い切ると、既存記事と重ならないテーマをAIが自動で考えます。
+#
+# category: 記事のカテゴリ表示名（ブログ一覧の絞り込みに使われます）
+# audience: creator（制作者向け） / client（発注・導入を検討する企業向け）
+# hint:     記事の方向性（AIへの指示）
+
+- id: blender-commercial-license
+  category: 3DCG活用ガイド
+  audience: client
+  hint: Blenderは商用案件で使って問題ないのか。GPLライセンスの意味、制作物の権利、企業が安心して発注できる理由
+
+- id: bevel-modifier-hard-surface
+  category: Blender Tips
+  audience: creator
+  hint: ハードサーフェスモデリングでのベベルモディファイアの使い方。Limit Method、角度指定、Weighted Normalとの組み合わせ
+
+- id: gltf-web-optimization
+  category: Web3D
+  audience: creator
+  hint: Web向けglTF/GLBを軽くする方法。ポリゴン削減、テクスチャサイズ、Draco圧縮、KTX2の考え方
+
+- id: 3dcg-outsourcing-cost
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 3DCG制作を外注するときの費用の決まり方。見積りに影響する要素（ポリゴン数、テクスチャ、リグ、修正回数など）と予算の考え方
+
+- id: blender-to-unreal-export
+  category: ゲームエンジン連携
+  audience: creator
+  hint: BlenderからUnreal EngineへFBXで書き出すときのスケール・軸・スムージング・マテリアルの注意点
+
+- id: uv-unwrap-basics
+  category: Blender Tips
+  audience: creator
+  hint: 失敗しないUV展開の基本。シームの入れ方、テクセル密度の揃え方、UV Packの設定
+
+- id: geometry-nodes-scatter
+  category: Blender Tips
+  audience: creator
+  hint: Geometry Nodesで石や草を自動配置する散布（スキャッタリング）の基本構成
+
+- id: product-visualization-merit
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 製品撮影を3DCGに置き換えるメリットとデメリット。カラーバリエーション、発売前ビジュアル、修正のしやすさ
+
+- id: maya-to-blender-migration
+  category: パイプライン
+  audience: creator
+  hint: MayaからBlenderへ移行する人がつまずくポイント。操作体系、用語の対応表、データ受け渡し
+
+- id: vrm-avatar-basics
+  category: VRM・アバター
+  audience: client
+  hint: VRMとは何か。VRM 0.xと1.0の違い、VTuberやメタバースでアバターを用意するときに発注者が知っておくべきこと
+
+- id: pbr-material-basics
+  category: Blender Tips
+  audience: creator
+  hint: PBRマテリアルの基本。Base Color、Roughness、Metallic、Normalの役割と、よくある設定ミス
+
+- id: lowpoly-game-asset-workflow
+  category: ゲームエンジン連携
+  audience: creator
+  hint: ゲーム用ローポリアセットの制作フロー。ハイポリからのベイク、法線マップ、LOD
+
+- id: glass-material-threejs
+  category: Web3D
+  audience: creator
+  hint: BlenderのガラスマテリアルをglTFでthree.jsに持っていく方法。KHR_materials_transmission / volume、environmentの必要性、両面表示の注意
+
+- id: 3d-ad-glasses-free
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 裸眼3D広告（街頭の立体に見える映像）の仕組みと、企画から制作までの流れ
+
+- id: rigify-intro
+  category: Blender Tips
+  audience: creator
+  hint: Rigifyで人型リグを作る基本手順とカスタマイズのポイント
+
+- id: blender-python-automation
+  category: パイプライン
+  audience: creator
+  hint: Blender Pythonで繰り返し作業を自動化する入門。選択オブジェクトへの一括処理、キーフレーム挿入の例
+
+- id: eevee-vs-cycles
+  category: Blender Tips
+  audience: creator
+  hint: EEVEEとCyclesの使い分け。速度・品質・用途別の選び方
+
+- id: web3d-for-business
+  category: 3DCG活用ガイド
+  audience: client
+  hint: Webサイトに3Dを入れるメリット。製品ビューア、ブランドサイト、表示速度とのバランス
+
+- id: retopology-ai-models
+  category: Blender Tips
+  audience: creator
+  hint: AI生成3Dモデルを実用データにするためのリトポロジーとテクスチャ整理の考え方
+
+- id: texture-baking-guide
+  category: Blender Tips
+  audience: creator
+  hint: Blenderでのテクスチャベイクの基本。Cyclesベイク、ケージ、マージンの設定
+
+- id: 3d-brief-template
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 3DCG制作を依頼するときに用意すべき情報（用途、納品形式、参考資料、スケジュール、修正範囲）。発注書テンプレート的な記事
+
+- id: unity-blender-workflow
+  category: ゲームエンジン連携
+  audience: creator
+  hint: BlenderとUnityの連携。FBX設定、スケール、Humanoidリグ、マテリアルの置き換え
+
+- id: background-modeling-modular
+  category: Blender Tips
+  audience: creator
+  hint: 背景モデリングでのモジュラー設計。グリッド、スナップ、再利用しやすいパーツ分割
+
+- id: digital-twin-intro
+  category: 3DCG活用ガイド
+  audience: client
+  hint: デジタルツインとは何か。製造・建築・施設管理での活用例と、3Dモデル制作の役割
+
+- id: color-management-agx
+  category: Blender Tips
+  audience: creator
+  hint: Blenderのカラーマネジメント。AgX・Filmic・Standardの違いと、納品先に合わせた設定
+
+- id: blender-addon-development
+  category: パイプライン
+  audience: creator
+  hint: Blenderアドオン開発の最初の一歩。bl_info、Operator、Panelの最小構成
+
+- id: character-topology
+  category: Blender Tips
+  audience: creator
+  hint: アニメーション向けキャラクターのトポロジー。関節まわりのエッジフロー、顔のループ
+
+- id: 3dcg-in-house-vs-outsource
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 3DCGを社内で内製するか外注するか。コスト、スピード、ノウハウ蓄積の観点での判断基準
+
+- id: sculpting-basics
+  category: Blender Tips
+  audience: creator
+  hint: Blenderスカルプトの基本。ダイナミックトポロジー、マルチレゾリューション、よく使うブラシ
+
+- id: gltf-extensions-overview
+  category: Web3D
+  audience: creator
+  hint: glTFの主要な拡張機能（KHR_materials_*、KHR_texture_transform、KHR_draco_mesh_compressionなど）と対応状況の確認方法
+
+- id: vrma-motion
+  category: VRM・アバター
+  audience: creator
+  hint: VRMAアニメーションとは何か。Blenderでモーションを作って書き出すまでの流れ
+
+- id: blender-training-for-companies
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 企業がBlenderを導入するときの社員研修の進め方。無料ツールだからこその導入メリットと注意点
+
+- id: simulation-cloth
+  category: Blender Tips
+  audience: creator
+  hint: Blenderのクロスシミュレーションの基本設定と、破綻を防ぐコツ
+
+- id: file-management-pipeline
+  category: パイプライン
+  audience: creator
+  hint: 3DCG制作のファイル管理。命名規則、リンク/アペンド、アセットブラウザの活用
+
+- id: lighting-product-render
+  category: Blender Tips
+  audience: creator
+  hint: 製品レンダリングのライティング。3点照明、HDRI、映り込みのコントロール
+
+- id: 3d-model-check-with-blender
+  category: 3DCG活用ガイド
+  audience: client
+  hint: 納品された3DモデルをBlenderで確認する方法（発注者向け）。開き方、表示の切り替え、チェックすべきポイント
+
+- id: motion-graphics-blender
+  category: 映像制作
+  audience: creator
+  hint: Blenderでモーショングラフィックスを作る。テキストアニメーション、ジオメトリノードの活用
+
+- id: company-video-3dcg
+  category: 映像制作
+  audience: client
+  hint: 会社紹介・商品PR映像に3DCGを使うメリットと、実写との組み合わせ方
+
+- id: normal-map-troubleshooting
+  category: Blender Tips
+  audience: creator
+  hint: 法線マップがおかしく見えるときの原因と対処。OpenGL/DirectX形式、タンジェント空間、スムージング
+
+- id: realtime-vs-prerender
+  category: 3DCG活用ガイド
+  audience: client
+  hint: リアルタイム3D（ゲームエンジン・Web）とプリレンダー映像の違い。用途別にどちらを選ぶべきか
+
+- id: asset-browser-library
+  category: パイプライン
+  audience: creator
+  hint: Blenderのアセットブラウザで社内ライブラリを作る方法
+
+- id: shape-keys-facial
+  category: Blender Tips
+  audience: creator
+  hint: シェイプキーで表情を作る基本。VRMやゲーム向けの表情設計

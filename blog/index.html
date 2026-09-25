@@ -1,0 +1,51 @@
+---
+layout: base
+title: ブログ
+description: Blender専門の3DCG制作スタジオ Blenda Core のブログ。Blender・Unreal Engine・Mayaの技術情報や、企業の3DCG活用のヒントを毎日発信しています。
+---
+<section class="blog-hero">
+  <div class="wrap">
+    <div class="section-tag">Blog</div>
+    <h1 class="section-title">3DCG制作の現場から、<br>毎日ひとつの知見を。</h1>
+    <p class="section-desc">Blenderを中心に、Unreal Engine・Maya・Web3Dまで。制作に役立つ技術情報と、3DCGをビジネスに活かすためのヒントをお届けします。</p>
+
+    {% assign cats = site.posts | map: "category_label" | uniq | compact %}
+    {% if cats.size > 1 %}
+    <div class="filter" role="group" aria-label="カテゴリで絞り込み">
+      <button type="button" class="chip is-active" data-filter="all">すべて</button>
+      {% for c in cats %}<button type="button" class="chip" data-filter="{{ c }}">{{ c }}</button>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="blog-list">
+  <div class="wrap">
+    {% if site.posts.size == 0 %}
+      <p class="empty">記事は近日公開予定です。</p>
+    {% else %}
+    <div class="post-grid">
+      {% for p in site.posts %}
+      <a class="post-card" href="{{ p.url | relative_url }}" data-cat="{{ p.category_label }}">
+        {% if p.category_label %}<span class="card-cat">{{ p.category_label }}</span>{% endif %}
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description | default: p.excerpt | strip_html | truncate: 90 }}</p>
+        <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.filter .chip').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      document.querySelectorAll('.filter .chip').forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      document.querySelectorAll('.blog-list .post-card').forEach(function (card) {
+        card.hidden = !(f === 'all' || card.getAttribute('data-cat') === f);
+      });
+    });
+  });
+</script>

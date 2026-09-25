@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% seo %}
+{% feed_meta %}
+<link rel="stylesheet" href="{{ '/assets/blog.css' | relative_url }}">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="nav">
+    <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/logo.png' | relative_url }}" alt="Blenda Core"></a>
+    <nav>
+      <ul>
+        <li><a href="{{ '/#director' | relative_url }}">代表紹介</a></li>
+        <li><a href="{{ '/#services' | relative_url }}">サービス</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">ブログ</a></li>
+        <li><a href="{{ '/#about' | relative_url }}">会社概要</a></li>
+      </ul>
+    </nav>
+    <a href="{{ '/#contact' | relative_url }}" class="nav-cta">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/logo.png' | relative_url }}" alt="Blenda Core"></a>
+      <nav><ul>
+        <li><a href="{{ '/#director' | relative_url }}">代表紹介</a></li>
+        <li><a href="{{ '/#services' | relative_url }}">サービス</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}">ブログ</a></li>
+        <li><a href="{{ '/#about' | relative_url }}">会社概要</a></li>
+        <li><a href="{{ '/#contact' | relative_url }}">お問い合わせ</a></li>
+      </ul></nav>
+    </div>
+    <div>© 2026 <span class="brand-blenda">Blenda</span> <span class="brand-core">Core</span> Inc. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

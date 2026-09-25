@@ -1,0 +1,46 @@
+---
+layout: base
+---
+<article class="post wrap-narrow">
+  <nav class="breadcrumb"><a href="{{ '/' | relative_url }}">ホーム</a><span>/</span><a href="{{ '/blog/' | relative_url }}">ブログ</a></nav>
+
+  <header class="post-header">
+    {% if page.category_label %}<div class="eyebrow">{{ page.category_label }}</div>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+      <span>文：{{ site.author }}</span>
+    </div>
+    {% if page.tags.size > 0 %}
+    <ul class="tag-list">{% for tag in page.tags %}<li>#{{ tag }}</li>{% endfor %}</ul>
+    {% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <aside class="post-cta">
+    <div>
+      <strong>Blender・3DCG制作のご相談はBlenda Coreへ</strong>
+      <p>モデリング、リギング、映像、Web3D、パイプライン構築まで。予算や仕様が固まっていない段階でもお気軽にどうぞ。お見積りは無料です。</p>
+    </div>
+    <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary">お問い合わせ →</a>
+  </aside>
+
+  {% assign related = site.posts | where_exp: "p", "p.url != page.url" %}
+  {% if related.size > 0 %}
+  <section class="related">
+    <h2>新着記事</h2>
+    <div class="post-grid">
+      {% for p in related limit: 3 %}
+      <a class="post-card" href="{{ p.url | relative_url }}">
+        {% if p.category_label %}<span class="card-cat">{{ p.category_label }}</span>{% endif %}
+        <h3>{{ p.title }}</h3>
+        <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</article>
