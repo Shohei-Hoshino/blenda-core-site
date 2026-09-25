@@ -50,7 +50,7 @@ content:
         label: カテゴリ
         type: select
         options:
-          values: [Blender Tips, 3DCG活用ガイド, Web3D, ゲームエンジン連携, パイプライン, VRM・アバター, 映像制作, お知らせ]
+          values: [3DCG, Blender Tips, 3DCG活用ガイド, Web3D, ゲームエンジン連携, パイプライン, VRM・アバター, 映像制作, お知らせ]
       - name: tags
         label: タグ
         type: string

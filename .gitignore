@@ -9,3 +9,4 @@ Gemfile.lock
 Gemfile.lock.old
 preview-log.txt
 __pycache__/
+.frontmatter/database/

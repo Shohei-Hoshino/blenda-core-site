@@ -1,0 +1,84 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.content.publicFolder": "/",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "ブログ記事",
+      "path": "[[workspace]]/_posts",
+      "filePrefix": "yyyy-MM-dd",
+      "contentTypes": [
+        "default"
+      ]
+    }
+  ],
+  "frontMatter.content.defaultFileType": "md",
+  "frontMatter.taxonomy.dateFormat": "yyyy-MM-dd HH:mm:ss xx",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": "blog/{{date|yyyy/MM/dd}}",
+      "fields": [
+        {
+          "title": "タイトル",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "公開日",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "公開する（オフにすると非公開の下書き）",
+          "name": "published",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "title": "説明文（検索結果に表示・80〜120文字）",
+          "name": "description",
+          "type": "string",
+          "single": false
+        },
+        {
+          "title": "カテゴリ",
+          "name": "category_label",
+          "type": "choice",
+          "choices": [
+            "3DCG",
+            "Blender Tips",
+            "3DCG活用ガイド",
+            "Web3D",
+            "ゲームエンジン連携",
+            "パイプライン",
+            "VRM・アバター",
+            "映像制作",
+            "お知らせ"
+          ]
+        },
+        {
+          "title": "タグ",
+          "name": "tags",
+          "type": "list"
+        },
+        {
+          "title": "アイキャッチ画像（横長16:9推奨）",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "アイキャッチ画像の説明（任意）",
+          "name": "image_alt",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.dashboard.openOnStart": true
+}

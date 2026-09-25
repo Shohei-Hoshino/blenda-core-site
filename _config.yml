@@ -25,6 +25,7 @@ defaults:
 
 exclude:
   - scripts/
+  - frontmatter.json
   - README-blog.md
   - Gemfile
   - Gemfile.lock
