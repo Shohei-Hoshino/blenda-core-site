@@ -5,6 +5,7 @@ date: 2026-10-01 10:00:00 +0900
 description: "検索結果に表示される説明文（80〜120文字）"
 category_label: "Blender Tips"   # Blender Tips / 3DCG活用ガイド / Web3D / ゲームエンジン連携 / パイプライン / VRM・アバター / 映像制作 など
 tags: ["Blender", "モデリング"]
+image: /assets/blog/eyecatch.jpg   # アイキャッチ画像（不要なら行ごと削除）
 ---
 
 導入文。読者の悩みと、この記事でわかることを書きます。

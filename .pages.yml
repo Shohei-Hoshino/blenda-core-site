@@ -32,6 +32,12 @@ content:
         label: 公開日
         type: date
         required: true
+      - name: image
+        label: アイキャッチ画像（タイトル下と一覧に表示・横長16:9推奨）
+        type: image
+      - name: image_alt
+        label: アイキャッチ画像の説明（任意）
+        type: string
       - name: description
         label: 説明文（検索結果に表示・80〜120文字）
         type: text
