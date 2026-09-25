@@ -8,3 +8,4 @@ vendor/
 Gemfile.lock
 Gemfile.lock.old
 preview-log.txt
+__pycache__/

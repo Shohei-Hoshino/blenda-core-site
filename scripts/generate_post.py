@@ -206,6 +206,7 @@ def main() -> int:
     front = [
         "---",
         f"title: {yaml_str(title)}",
+        f"url_slug: {slug}",
         f"date: {now:%Y-%m-%d %H:%M:%S} +0900",
         f"description: {yaml_str(description)}",
         f"category_label: {yaml_str(category)}",

@@ -1,0 +1,52 @@
+# Pages CMS（https://app.pagescms.org）の設定。ブラウザ上の管理画面から記事を書けるようにします。
+media:
+  name: blog-images
+  label: ブログ画像
+  input: assets/blog
+  output: /assets/blog
+  rename: safe
+  categories: [image]
+
+content:
+  - name: posts
+    label: ブログ記事
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{fields.url_slug}.md"
+    view:
+      primary: title
+      fields: [title, category_label, date]
+      sort: [date, title]
+      order: desc
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: url_slug
+        label: URL用の英語名（例 blender-bevel-tips）※新規作成時のみ使用
+        type: string
+        required: true
+      - name: date
+        label: 公開日
+        type: date
+        required: true
+      - name: description
+        label: 説明文（検索結果に表示・80〜120文字）
+        type: text
+      - name: category_label
+        label: カテゴリ
+        type: select
+        options:
+          values: [Blender Tips, 3DCG活用ガイド, Web3D, ゲームエンジン連携, パイプライン, VRM・アバター, 映像制作, お知らせ]
+      - name: tags
+        label: タグ
+        type: string
+        list: true
+      - name: body
+        label: 本文
+        type: rich-text
+        options:
+          format: markdown
+          media: blog-images

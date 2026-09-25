@@ -1,5 +1,6 @@
 ---
 title: "Blenderは商用案件で使って大丈夫？GPLライセンスと制作物の権利をわかりやすく解説"
+url_slug: blender-commercial-license-gpl
 date: 2026-09-25 21:00:00 +0900
 description: "無料のBlenderで作った3DCGは商用利用できるのか。GPLライセンスの意味、制作物の権利の扱い、企業が安心してBlender制作を発注できる理由を、発注担当者向けにわかりやすく解説します。"
 category_label: "3DCG活用ガイド"
