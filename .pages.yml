@@ -18,7 +18,9 @@ content:
       primary: title
       fields: [title, category_label, date]
       sort: [date, title]
-      order: desc
+      default:
+        sort: date
+        order: desc
     fields:
       - name: title
         label: タイトル
@@ -32,6 +34,9 @@ content:
         label: 公開日
         type: date
         required: true
+        options:
+          time: true
+          format: "yyyy-MM-dd HH:mm:ss xx"
       - name: image
         label: アイキャッチ画像（タイトル下と一覧に表示・横長16:9推奨）
         type: image
