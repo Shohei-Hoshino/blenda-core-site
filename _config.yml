@@ -28,3 +28,8 @@ exclude:
   - README-blog.md
   - Gemfile
   - Gemfile.lock
+  - preview.bat
+  - preview-log.txt
+  - Gemfile.lock.old
+  - _preview/
+  - vendor/

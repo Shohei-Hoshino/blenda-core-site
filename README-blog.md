@@ -65,6 +65,24 @@ GitHub Pages（Jekyll）が自動でページ化し、https://blendacore.com/blo
 - **使うモデルを変えたい**：Variables に `BLOG_MODEL`（例: `claude-opus-5-5`）を追加。未設定なら `claude-sonnet-5`。
 - **自分で記事を書きたい**：`_posts/2026-10-01-my-post.md` のように「日付-英語のスラッグ.md」で置けば、そのまま公開されます（先頭の `---` で囲まれた部分は既存記事をまねてください）。
 
+## ローカルで表示を確認する（Windows）
+
+### 最初に1回だけ
+1. https://rubyinstaller.org/downloads/ から **Ruby+Devkit**（「WITH DEVKIT」の一番上、x64）をダウンロードしてインストール
+2. インストールの最後に出る黒い画面で `ridk install` が始まったら、`1,3` と入力（または何も入れずに）Enter。終わったらEnterで閉じる
+3. PowerShellを開き直して、このフォルダで次を実行
+   ```
+   gem install bundler
+   bundle install
+   ```
+
+### 毎回
+- `preview.bat` をダブルクリック → ブラウザで http://localhost:4000/blog/ が開きます
+- 記事ファイルを保存すると、ブラウザが自動で更新されます
+- 終わるときは黒い画面で `Ctrl + C`
+
+うまく動かないときは、`bundle exec jekyll serve` をPowerShellで直接実行して、表示されたエラーを見てください。
+
 ## 注意
 
 - AIの記事は、数値やバージョン、固有の仕様を誤ることがあります。特にレビューモードのうちは、手順や設定値を一度確認してから公開してください。

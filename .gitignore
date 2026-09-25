@@ -1,0 +1,10 @@
+# ローカル確認用（GitHubには上げない）
+_preview/
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+Gemfile.lock
+Gemfile.lock.old
+preview-log.txt
