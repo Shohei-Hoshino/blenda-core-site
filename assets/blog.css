@@ -1,14 +1,16 @@
 /* Blenda Core blog — shares the tokens and look of the top page (index.html) */
 :root{
-  --bg: #0b0b0d;
-  --bg-soft: #131316;
-  --card: #18181c;
-  --border: #27272d;
-  --text: #eceef0;
-  --text-dim: #9a9aa2;
+  --bg: #ffffff;
+  --bg-soft: #f4f5f7;
+  --card: #ffffff;
+  --border: #e3e4e9;
+  --text: #16171b;
+  --text-dim: #5d5f69;
   --accent: #f0791c;
-  --accent-soft: rgba(240,121,28,0.14);
-  --accent2: #4fc3f7;
+  --accent-ink: #cf5f0a;
+  --accent-soft: rgba(240,121,28,0.10);
+  --accent2: #1e9bd7;
+  --shadow: 0 1px 2px rgba(20,22,30,0.04), 0 10px 28px rgba(20,22,30,0.06);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
@@ -33,7 +35,7 @@ main, footer { position: relative; z-index: 1; }
 /* Header (same as top page) */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(11,11,13,0.75); backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.82); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1120px; margin: 0 auto; }
@@ -88,9 +90,9 @@ nav ul li a:hover { color: var(--text); }
 .post-card:hover .card-thumb img { transform: scale(1.04); }
 .card-thumb-fallback {
   width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 800; letter-spacing: 0.12em; color: rgba(236,238,240,0.75);
-  background: radial-gradient(circle at 25% 30%, rgba(240,121,28,0.55), transparent 55%),
-              radial-gradient(circle at 80% 75%, rgba(0,78,255,0.45), transparent 55%), #121216;
+  font-size: 13px; font-weight: 800; letter-spacing: 0.12em; color: rgba(22,23,27,0.55);
+  background: radial-gradient(circle at 25% 30%, rgba(240,121,28,0.40), transparent 55%),
+              radial-gradient(circle at 80% 75%, rgba(0,78,255,0.30), transparent 55%), #f4f5f7;
 }
 .post-hero {
   margin: 28px 0 0; border-radius: 16px; overflow: hidden;
@@ -119,7 +121,7 @@ nav ul li a:hover { color: var(--text); }
   padding-left: 14px; border-left: 4px solid var(--accent);
 }
 .post-body h3 { font-size: 18px; font-weight: 700; margin-top: 2em; }
-.post-body p, .post-body li { color: #d6d7db; }
+.post-body p, .post-body li { color: #2b2c33; }
 .post-body strong { color: var(--text); }
 .post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .post-body ul, .post-body ol { padding-left: 1.4em; }
@@ -132,10 +134,10 @@ nav ul li a:hover { color: var(--text); }
   background: var(--bg-soft); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px;
 }
 .post-body pre {
-  background: #111114; border: 1px solid var(--border); border-radius: 12px;
+  background: #16171b; color: #e8e9ec; border: 1px solid #16171b; border-radius: 12px;
   padding: 18px 20px; overflow-x: auto; line-height: 1.6;
 }
-.post-body pre code { background: none; border: none; padding: 0; font-size: 13.5px; }
+.post-body pre code { background: none; border: none; padding: 0; font-size: 13.5px; color: inherit; }
 .post-body table { width: 100%; border-collapse: collapse; font-size: 14.5px; display: block; overflow-x: auto; }
 .post-body th, .post-body td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
 .post-body th { background: var(--bg-soft); }
@@ -173,3 +175,8 @@ footer nav ul li a { font-size: 13px; }
   .post-cta { padding: 26px 22px; }
   .post-cta .btn { width: 100%; justify-content: center; }
 }
+
+/* ---- Light theme refinements ---- */
+.section-tag, .eyebrow, .card-cat, .breadcrumb a:hover, .post-body a { color: var(--accent-ink); }
+.post-card { box-shadow: var(--shadow); }
+.post-card:hover { box-shadow: 0 2px 4px rgba(20,22,30,0.05), 0 16px 36px rgba(20,22,30,0.09); }
