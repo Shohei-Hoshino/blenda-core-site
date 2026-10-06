@@ -1236,8 +1236,8 @@
   }
 
   // Google Ads conversion: fires only after Web3Forms confirms the submission.
-  // Set the send_to value from the "お問い合わせ送信" event snippet (AW-18497230712/XXXX).
-  const ADS_CONVERSION_SEND_TO = '';
+  // send_to from the "お問い合わせ送信" conversion action's event snippet.
+  const ADS_CONVERSION_SEND_TO = 'AW-18497230712/nT8ECMHh_ZIdEPiulfRE';
   function reportAdsConversion() {
     if (ADS_CONVERSION_SEND_TO && typeof gtag === 'function') {
       gtag('event', 'conversion', { send_to: ADS_CONVERSION_SEND_TO });
