@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18497230712"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18497230712');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="Ur6_fpkzofKqtDiANlnBMNGC38aZg8SLZyi9rA25vk0" />
@@ -1226,6 +1235,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !successModal.hidden) closeSuccessModal(); });
   }
 
+  // Google Ads conversion: fires only after Web3Forms confirms the submission.
+  // Set the send_to value from the "お問い合わせ送信" event snippet (AW-18497230712/XXXX).
+  const ADS_CONVERSION_SEND_TO = '';
+  function reportAdsConversion() {
+    if (ADS_CONVERSION_SEND_TO && typeof gtag === 'function') {
+      gtag('event', 'conversion', { send_to: ADS_CONVERSION_SEND_TO });
+    }
+  }
+
   if (contactForm) {
     const statusEl = document.getElementById('form-status');
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -1245,6 +1263,7 @@
         const data = await res.json();
         if (data.success) {
           contactForm.reset();
+          reportAdsConversion();
           openSuccessModal();
         } else {
           throw new Error(data.message || '送信に失敗しました');
