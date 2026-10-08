@@ -1244,6 +1244,17 @@
     }
   }
 
+  // GA4 (G-ZZ7VF688KN, linked to the Google tag above): record the inquiry as a
+  // generate_lead event so it can be marked as a key event in Analytics.
+  function reportLeadToAnalytics(budget) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        form_id: 'contact-form',
+        budget: budget || '未選択',
+      });
+    }
+  }
+
   if (contactForm) {
     const statusEl = document.getElementById('form-status');
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -1255,15 +1266,17 @@
       statusEl.textContent = '';
       statusEl.style.color = '';
       try {
+        const formData = new FormData(contactForm);
         const res = await fetch(contactForm.action, {
           method: 'POST',
           headers: { Accept: 'application/json' },
-          body: new FormData(contactForm),
+          body: formData,
         });
         const data = await res.json();
         if (data.success) {
           contactForm.reset();
           reportAdsConversion();
+          reportLeadToAnalytics(formData.get('budget'));
           openSuccessModal();
         } else {
           throw new Error(data.message || '送信に失敗しました');
