@@ -1063,13 +1063,15 @@
     // mapped to a bounded yaw/pitch so the logo always turns toward it without
     // ever swinging edge-on.
     let targetX = 0, targetY = 0;
+    const FOLLOW_Y_LIMIT = 27 * Math.PI / 180;
     window.addEventListener('mousemove', (e) => {
       const r = container.getBoundingClientRect();
       const cx = r.left + r.width / 2;
       const cy = r.top + r.height / 2;
       const dx = (e.clientX - cx) / (window.innerWidth / 2);
       const dy = (e.clientY - cy) / (window.innerHeight / 2);
-      targetX = Math.max(-0.7, Math.min(0.7, dx * 0.9));
+      // Cursor-follow yaw is capped at 27 degrees (drag keeps its own 45-degree cap).
+      targetX = Math.max(-FOLLOW_Y_LIMIT, Math.min(FOLLOW_Y_LIMIT, dx * 0.9));
       // Inverted (negative) so the model tilts down to "look at" a cursor
       // below it, and up for one above it, instead of the reverse.
       targetY = Math.max(-0.4, Math.min(0.4, -dy * 0.5));
