@@ -8,4 +8,5 @@ description: 円形の形をしたSci-fi風キットバッシュの配布ペー�
 category_label: 3DCG
 tags:
   - kitbash
+  - free
 ---
