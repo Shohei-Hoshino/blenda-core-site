@@ -18,6 +18,8 @@ tags:
 
 商用・非商用問わず、どんなコンテンツにもご使用いただけます。
 
+なお、こちらのキットバッシュは[https://x.com/sh71456](https://x.com/sh71456)にて以前配布したものと同じになります。
+
 ![](/assets/blog/coveer.jpg)
 
 ![](/assets/blog/shohei-hoshino-extra-2.jpg)
