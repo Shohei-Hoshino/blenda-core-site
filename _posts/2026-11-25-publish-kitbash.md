@@ -10,3 +10,17 @@ tags:
   - kitbash
   - free
 ---
+## Circlar Kitbashの配布ページ
+
+弊社で制作したキットバッシュを無料でダウンロードできます。
+
+[https://shoheihoshino.gumroad.com/l/znvhh](https://shoheihoshino.gumroad.com/l/znvhh)
+
+商用・非商用問わず、どんなコンテンツにもご使用いただけます。
+
+![](/assets/blog/coveer.jpg)
+
+![](/assets/blog/shohei-hoshino-extra-2.jpg)
+
+![](/assets/blog/shohei-hoshino-extra-1.jpg)
+
